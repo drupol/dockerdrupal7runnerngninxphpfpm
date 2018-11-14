@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  web:
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - .:/var/www
+    restart: always
+    working_dir: "/var/www"
+    depends_on:
+      - php
+  php:
+    build:
+      context: docker/php
+      args:
+        TIMEZONE: Europe/Brussels
+    volumes:
+      - .:/var/www
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always
+    working_dir: "/var/www"
+    depends_on:
+      - db
+      - composer
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+  composer:
+    image: composer
+    volumes:
+      - .:/var/www
+    working_dir: "/var/www"

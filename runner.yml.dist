@@ -1,0 +1,34 @@
+drupal:
+  core: "7"
+  base_url: "http://127.0.0.1:8080"
+  site:
+    profile: standard
+  database:
+    scheme: "mysql"
+    host: "db"
+    port: "3306"
+    name: "drupal"
+    user: "root"
+    password: ""
+  settings:
+    conf:
+      file_scan_ignore_directories:
+        - vendor
+        - ${drupal.root}
+        - build
+
+      drupal_http_request_fails: false
+  post_install:
+      - ./vendor/bin/drush --root=$(pwd)/build dis color dashboard toolbar overlay help comment rdf search shortcut -y
+      - ./vendor/bin/drush --root=$(pwd)/build pmu color dashboard toolbar overlay help comment rdf search shortcut -y
+      - ./vendor/bin/drush --root=$(pwd)/build en admin_menu admin_devel admin_menu_toolbar composer_autoloader simpletest -y
+      - ./vendor/bin/drush --root=$(pwd)/build cc all
+  drush:
+    options:
+      ignored-directories: "${drupal.root}"
+      uri: "${drupal.base_url}"
+
+commands:
+  drupal:site-setup:
+    - { task: "run", command: "drupal:drush-setup" }
+    - { task: "run", command: "drupal:settings-setup" }
