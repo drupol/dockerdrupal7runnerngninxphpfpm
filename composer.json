@@ -1,6 +1,6 @@
 {
   "name": "drupal/drupal7php73",
-  "description": "Drupal 7 php 7.3",
+  "description": "Drupal 8 php 7.3",
   "type": "drupal-module",
   "license": "GPL-2.0",
   "minimum-stability": "dev",
@@ -15,28 +15,39 @@
   "require": {
   },
   "require-dev": {
+    "behat/mink": "1.7.x-dev",
+    "behat/mink-goutte-driver": "^1.2",
+    "behat/mink-selenium2-driver": "1.3.x-dev",
+    "drupal/coder": "^8.2.12",
+    "jcalderonzumba/gastonjs": "^1.0.2",
+    "jcalderonzumba/mink-phantomjs-driver": "^0.3.1",
+    "mikey179/vfsStream": "^1.2",
+    "phpunit/phpunit": "^6.5",
+    "phpspec/prophecy": "^1.4",
+    "symfony/css-selector": "^3.4.0",
+    "symfony/phpunit-bridge": "^3.4.3",
+    "symfony/debug": "^3.4.0",
     "phpro/grumphp": "^0.12",
-    "anahkiasen/underscore-php" : "dev-master",
-    "peridot-php/leo": "~1.0",
     "ec-europa/qa-automation": "3.0.1",
-    "composer/installers": "^1.2",
     "cweagans/composer-patches": "^1.6",
-    "drupal-composer/preserve-paths": "^0.1",
-    "drupal/composer_autoloader": "^1.0",
-    "drush/drush": "^8",
     "webflo/drupal-finder": "^1.0.0",
     "webmozart/path-util": "^2.3",
     "mikey179/vfsstream": "~1.2",
     "nuvoleweb/robo-config": "~0.1",
-    "drupal/drupal": "dev-7.x",
-    "drupal/devel": "*",
-    "drupal/admin_menu": "*",
-    "openeuropa/task-runner": "dev-master"
+    "drupal/core": "8.7.x-dev",
+    "openeuropa/task-runner": "dev-master",
+    "composer/installers": "~1.5",
+    "drush/drush": "~9.0@stable",
+    "drupal-composer/drupal-scaffold": "^2.5.2",
+    "drupal/ctools": "^3.0",
+    "drupal/drupal-extension": "^4.0.0@alpha",
+    "symfony/browser-kit": "~3.0||~4.0",
+    "nikic/php-parser": "~3.0"
   },
   "repositories": [
     {
       "type": "composer",
-      "url": "https://packages.drupal.org/7"
+      "url": "https://packages.drupal.org/8"
     }
   ],
   "scripts": {
@@ -45,20 +56,19 @@
     "grumphp": "./vendor/bin/grumphp run"
   },
   "extra": {
+    "composer-exit-on-patch-failure": true,
     "patches": {
-      "drupal/drupal": {
-        "https://www.drupal.org/node/2482549": "https://www.drupal.org/files/issues/ignore_node_module-2482549-27_0.patch"
+      "drupal/core": {
+        "https://www.drupal.org/project/drupal/issues/2943172": "https://www.drupal.org/files/issues/2018-07-05/2943172-kernel-test-base-3.patch",
+        "https://www.drupal.org/project/drupal/issues/2599228": "https://www.drupal.org/files/issues/2018-10-01/2599228-SQL_error_on_content_creation-78_0.patch",
+        "https://www.drupal.org/project/drupal/issues/2571475": "https://www.drupal.org/files/issues/outbound_http_requests-2571475-10.patch"
       }
     },
     "installer-paths": {
-      "build/": ["type:drupal-core"],
-      "build/profiles/{$name}/": ["type:drupal-profile"],
-      "build/sites/all/drush/{$name}/": ["type:drupal-drush"],
-      "build/sites/all/modules/contrib/{$name}/": ["type:drupal-module"],
-      "build/sites/all/themes/contrib/{$name}/": ["type:drupal-theme"]
-    },
-    "preserve-paths": [
-      "build/sites/default"
-    ]
+      "build/core": ["type:drupal-core"]
+    }
+  },
+  "config": {
+    "sort-packages": true
   }
 }

@@ -1,5 +1,5 @@
 drupal:
-  core: "7"
+  core: "8"
   base_url: "http://web"
   site:
     profile: standard
@@ -18,10 +18,7 @@ drupal:
         - build
       drupal_http_request_fails: false
   post_install:
-      - ./vendor/bin/drush --root=$(pwd)/build dis color dashboard toolbar overlay help comment rdf search shortcut -y
-      - ./vendor/bin/drush --root=$(pwd)/build pmu color dashboard toolbar overlay help comment rdf search shortcut -y
-      - ./vendor/bin/drush --root=$(pwd)/build en admin_menu admin_devel admin_menu_toolbar composer_autoloader simpletest -y
-      - ./vendor/bin/drush --root=$(pwd)/build cc all
+      - ./vendor/bin/drush --root=$(pwd)/build cr
   drush:
     options:
       ignored-directories: "${drupal.root}"
