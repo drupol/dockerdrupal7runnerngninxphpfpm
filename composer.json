@@ -31,7 +31,7 @@
     "drupal/drupal": "dev-7.x",
     "drupal/devel": "*",
     "drupal/admin_menu": "*",
-    "openeuropa/task-runner": "^0.7"
+    "openeuropa/task-runner": "dev-master"
   },
   "repositories": [
     {

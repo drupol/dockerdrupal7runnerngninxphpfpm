@@ -1,6 +1,6 @@
 drupal:
   core: "7"
-  base_url: "http://127.0.0.1:8080"
+  base_url: "http://web"
   site:
     profile: standard
   database:
@@ -16,7 +16,6 @@ drupal:
         - vendor
         - ${drupal.root}
         - build
-
       drupal_http_request_fails: false
   post_install:
       - ./vendor/bin/drush --root=$(pwd)/build dis color dashboard toolbar overlay help comment rdf search shortcut -y
