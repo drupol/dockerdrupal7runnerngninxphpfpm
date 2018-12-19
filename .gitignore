@@ -73,3 +73,7 @@ docker-compose.*.yml
 .bash_history
 build
 /phpunit.xml
+/.composer/
+/.drush/
+/.pdepend/
+/behat.yml

@@ -36,3 +36,4 @@ parameters:
           max_body_width: 0
           max_subject_width: 0
         phpunit: ~
+        behat: ~

@@ -23,7 +23,7 @@ class SmokeTest extends WebDriverTestBase {
   ];
 
   /**
-   * Tests the Drupal login.
+   * Tests the Drupal module page.
    */
   public function testDrupalLogin(): void {
     $session = $this->getSession();
@@ -33,6 +33,12 @@ class SmokeTest extends WebDriverTestBase {
     // Log in as an administrator.
     $user = $this->drupalCreateUser([], NULL, TRUE);
     $this->drupalLogin($user);
+
+    $this->drupalGet('admin/modules');
+    $button = $page->findButton('Install');
+
+    $this->assertNotNull($button);
+
   }
 
 }
