@@ -70,5 +70,6 @@ docker-compose.*.yml
 .env
 .composer
 .drush
-/build
 .bash_history
+build
+/phpunit.xml
