@@ -1,0 +1,16 @@
+<?php
+
+ $finder = PhpCsFixer\Finder::create()
+     ->exclude('node_modules')
+     ->exclude('build')
+     ->exclude('docker')
+     ->name('*.inc')
+     ->name('*.install')
+     ->name('*.module')
+     ->name('*.profile')
+     ->name('*.theme')
+     ->name('*.php')
+     ->in(__DIR__);
+
+ return PhpCsFixer\Config::create()
+     ->setFinder($finder);

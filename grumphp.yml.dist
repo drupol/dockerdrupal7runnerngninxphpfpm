@@ -1,39 +1,88 @@
 parameters:
-    git_dir: .
-    bin_dir: vendor/bin
-    process_timeout: 180
-    tasks:
-        # PHP Code Sniffer.
-        phpcs:
-          standard: ./vendor/drupal/coder/coder_sniffer/Drupal
-          ignore_patterns:
-            - vendor/
-            - node_modules/
-          triggered_by:
-            - php
-            - install
-            - module
-            - inc
-          whitelist_patterns: []
-          warning_severity: ~
-          metadata:
-            priority: 300
-        # PHP Mess Detector.
-        phpmd:
-          exclude:
-            - vendor/
-          triggered_by:
-            - php
-            - install
-            - module
-            - inc
-        # Commit message format.
-        git_commit_message:
-          matchers: '/^([A-Z]+\-\d+|Issue #\d+): [A-Z].+\./'
-          case_insensitive: false
-          enforce_no_subject_trailing_period: false
-          multiline: false
-          max_body_width: 0
-          max_subject_width: 0
-        phpunit: ~
-        behat: ~
+  git_dir: .
+  bin_dir: vendor/bin
+  process_timeout: 180
+  tasks:
+    # PHP Code Sniffer.
+    phpcs:
+      standard: ./vendor/drupal/coder/coder_sniffer/Drupal
+      ignore_patterns:
+        - vendor/
+        - node_modules/
+      triggered_by:
+        - php
+        - install
+        - module
+        - inc
+      whitelist_patterns: []
+      warning_severity: ~
+      metadata:
+        priority: 300
+    # PHP Mess Detector.
+    phpmd:
+      exclude:
+        - vendor/
+      triggered_by:
+        - php
+        - install
+        - module
+        - inc
+    # Commit message format.
+    git_commit_message:
+      matchers: '/^([A-Z]+\-\d+|Issue #\d+): [A-Z].+\./'
+      case_insensitive: false
+      enforce_no_subject_trailing_period: false
+      multiline: false
+      max_body_width: 0
+      max_subject_width: 0
+    phpunit: ~
+    behat: ~
+    phpcsfixer2:
+      verbose: true
+      allow_risky: true
+      using_cache: false
+      config: .php_cs.dist
+
+      rules:
+        array_syntax:
+          syntax: short
+        blank_line_after_opening_tag: true
+        blank_line_before_statement:
+          statements:
+            - break
+            - continue
+            - declare
+            - return
+            - throw
+            - try
+        include: true
+        class_attributes_separation: true
+        class_definition:
+          single_line: true
+        declare_equal_normalize:
+          space: single
+        declare_strict_types: true
+        is_null: true
+        lowercase_static_reference: true
+        native_function_invocation: true
+        no_blank_lines_after_class_opening: true
+        no_closing_tag: true
+        no_extra_blank_lines:
+          tokens:
+            - extra
+            - curly_brace_block
+            - parenthesis_brace_block
+            - square_brace_block
+            - return
+            - throw
+            - use
+            - use_trait
+        no_trailing_whitespace_in_comment: true
+        no_unneeded_final_method: true
+        single_blank_line_at_eof: true
+        single_line_after_imports: true
+        strict_comparison: true
+        strict_param: true
+        trailing_comma_in_multiline_array: true
+        yoda_style:
+          always_move_variable: true

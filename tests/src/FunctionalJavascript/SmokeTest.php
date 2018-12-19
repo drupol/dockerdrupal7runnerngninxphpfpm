@@ -9,8 +9,8 @@ use Drupal\FunctionalJavascriptTests\WebDriverTestBase;
 /**
  * Base class functional JavaScript tests.
  */
-class SmokeTest extends WebDriverTestBase {
-
+class SmokeTest extends WebDriverTestBase
+{
   /**
    * Modules to enable.
    *
@@ -38,7 +38,5 @@ class SmokeTest extends WebDriverTestBase {
     $button = $page->findButton('Install');
 
     $this->assertNotNull($button);
-
   }
-
 }
