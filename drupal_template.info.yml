@@ -1,0 +1,7 @@
+name: Drupal template
+description: Drupal template
+type: module
+core: 8.x
+dependencies:
+  - drupal:paragraphs
+

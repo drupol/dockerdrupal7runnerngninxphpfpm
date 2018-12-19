@@ -1,0 +1,9 @@
+uuid: 6beae786-e891-47fd-9fed-19d0edae67db
+langcode: en
+status: true
+dependencies: {  }
+id: quote_paragraph
+label: 'Quote paragraph'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

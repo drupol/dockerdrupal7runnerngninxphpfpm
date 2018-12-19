@@ -1,0 +1,29 @@
+uuid: 4f8fb2a9-874c-434d-aa82-95fc0ec38cd1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.quote_paragraph.field_quote
+    - field.field.paragraph.quote_paragraph.field_quote_author
+    - paragraphs.paragraphs_type.quote_paragraph
+id: paragraph.quote_paragraph.default
+targetEntityType: paragraph
+bundle: quote_paragraph
+mode: default
+content:
+  field_quote:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_quote_author:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }
