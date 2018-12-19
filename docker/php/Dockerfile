@@ -1,4 +1,4 @@
-FROM php:7.3
+FROM php:7.3-fpm
 ARG TIMEZONE
 
 RUN apt-get update && apt-get install -y mysql-client unzip curl sqlite3 git
