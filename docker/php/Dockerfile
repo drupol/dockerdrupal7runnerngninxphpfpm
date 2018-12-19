@@ -1,4 +1,5 @@
-FROM php:7.3-fpm
+
+FROM php:7.2-fpm
 ARG TIMEZONE
 
 RUN apt-get update && apt-get install -y mysql-client unzip curl sqlite3 git
@@ -44,7 +45,6 @@ RUN set -ex; \
 	rm -rf /var/lib/apt/lists/*
 
 ADD . /
-
 # Set timezone
 RUN ln -snf /usr/share/zoneinfo/${TIMEZONE} /etc/localtime && echo ${TIMEZONE} > /etc/timezone
 
