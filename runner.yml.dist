@@ -1,5 +1,5 @@
 drupal:
-  core: "8"
+  core: 8
   base_url: "http://web"
   site:
     profile: standard
