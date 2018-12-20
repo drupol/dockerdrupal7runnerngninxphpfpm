@@ -18,6 +18,7 @@ drupal:
         - build
       drupal_http_request_fails: false
   post_install:
+      - ./vendor/bin/drush --root=$(pwd)/build en drupal_template -y
       - ./vendor/bin/drush --root=$(pwd)/build cr
   drush:
     options:
