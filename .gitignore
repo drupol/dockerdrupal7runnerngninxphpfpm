@@ -77,3 +77,4 @@ build
 /.drush/
 /.pdepend/
 /behat.yml
+/.php_cs.cache
