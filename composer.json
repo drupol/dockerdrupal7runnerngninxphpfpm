@@ -45,7 +45,7 @@
         "patches": {
             "drupal/drupal": {
                 "https://www.drupal.org/node/2482549": "https://www.drupal.org/files/issues/ignore_node_module-2482549-27_0.patch",
-                "https://www.drupal.org/node/3012308": "https://www.drupal.org/files/issues/2018-12-26/3012308-15.patch"
+                "https://www.drupal.org/node/3009351": "https://www.drupal.org/files/issues/2018-12-27/3009351-18.patch"
             }
         },
         "installer-paths": {
