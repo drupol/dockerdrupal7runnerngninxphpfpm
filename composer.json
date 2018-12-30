@@ -46,7 +46,8 @@
             "drupal/drupal": {
                 "https://www.drupal.org/node/2482549": "https://www.drupal.org/files/issues/ignore_node_module-2482549-27_0.patch",
                 "https://www.drupal.org/node/3009351": "https://www.drupal.org/files/issues/2018-12-30/3009351-23.patch",
-                "https://www.drupal.org/node/3020771": "https://www.drupal.org/files/issues/2018-12-30/3020771-8.patch"
+                "https://www.drupal.org/node/3020771": "https://www.drupal.org/files/issues/2018-12-30/3020771-8.patch",
+                "https://www.drupal.org/node/3023066": "https://www.drupal.org/files/issues/2018-12-30/3023066.patch"
             }
         },
         "installer-paths": {
