@@ -11,12 +11,12 @@ drupal:
     user: "root"
     password: ""
   settings:
-    conf:
+    settings:
       file_scan_ignore_directories:
-        - vendor
-        - ${drupal.root}
-        - build
-      drupal_http_request_fails: false
+        - "node_modules"
+        - "bower_components"
+        - "vendor"
+        - "${drupal.root}"
   post_install:
       - ./vendor/bin/drush --root=$(pwd)/build en drupal_template -y
       - ./vendor/bin/drush --root=$(pwd)/build cr
