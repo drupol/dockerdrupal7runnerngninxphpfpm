@@ -49,5 +49,5 @@ As this stack is using nginx, make sure you use the fpm version (usually suffix 
 Here's an example command line to run the tests "User" and "Session".
 
 ```bash
-docker-compose exec php sh -c "cd build; php ./scripts/run-tests.sh --url http://127.0.0.1:80/ --php /usr/local/bin/php --verbose Session,User"
+docker-compose exec php sh -c "cd build; php ./scripts/run-tests.sh --url http://web:80/ --php /usr/local/bin/php --verbose Session,User"
 ```
