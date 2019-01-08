@@ -15,7 +15,7 @@
     "require": {
     },
     "require-dev": {
-        "phpro/grumphp": "^0.12",
+        "phpro/grumphp": "^0.14",
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6",
         "drupal-composer/preserve-paths": "^0.1",
@@ -28,7 +28,7 @@
         "drupal/drupal": "dev-7.x",
         "drupal/devel": "*",
         "drupal/admin_menu": "*",
-        "openeuropa/task-runner": "dev-master"
+        "openeuropa/task-runner": "~1.0-beta4"
     },
     "repositories": [
         {
