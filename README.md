@@ -13,7 +13,7 @@ docker-compose exec -u www-data php composer install
 ```
 
 ```bash
-docker-compose exec -u www-data php ./vendor/bin/run drupal:site-install
+docker-compose exec -u www-data php ./vendor/bin/taskman drupal:site-install
 ```
 
 Using the default configuration, the development site web root should be in the `build` directory.
