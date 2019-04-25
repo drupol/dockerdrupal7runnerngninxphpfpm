@@ -13,7 +13,6 @@
         }
     ],
     "require-dev": {
-        "boedah/robo-drush": "^4.2",
         "composer/installers": "^1.6",
         "cweagans/composer-patches": "^1.6",
         "drupal-composer/preserve-paths": "^0.1.5",
@@ -22,7 +21,7 @@
         "drupal/devel": "^1.7",
         "drupal/drupal": "^7.66",
         "drupal/realistic_dummy_content": "^2",
-        "drupol/drupal-conventions": "^1.4.6",
+        "drupol/drupal-conventions": "^1.4.9",
         "drush/drush": "^8.2",
         "mikey179/vfsstream": "^1.6",
         "phptaskman/core": "dev-master",
@@ -61,9 +60,5 @@
         "robo": [
             "/home/pol/robocommands.yml"
         ]
-    },
-    "require": {
-        "phptaskman/core": "dev-master",
-        "phptaskman/drupal": "dev-master"
     }
 }
