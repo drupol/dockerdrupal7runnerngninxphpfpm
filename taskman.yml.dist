@@ -40,6 +40,6 @@ commands:
     - { task: "run", command: "setup:phpunit" }
     - { task: "run", command: "setup:behat" }
   setup:phpunit:
-    - { task: "process", source: "phpunit.xml.dist", destination: "phpunit.xml" }
+    - { task: "process", from: "phpunit.xml.dist", to: "phpunit.xml" }
   setup:behat:
-    - { task: "process", source: "behat.yml.dist", destination: "behat.yml" }
+    - { task: "process", from: "behat.yml.dist", to: "behat.yml" }
